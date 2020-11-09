@@ -16,16 +16,18 @@ namespace HashMap
             //Split converts paragraph  into array of sub strings
             string[] para = paragraph.Split(" ");
             MyMapNode<int, string> hash = new MyMapNode<int, string>(para.Length);
+            MyMapNode<int, string> hash1 = new MyMapNode<int, string>(para.Length);
             int key = 0;
             //Loop iterates on paragraph and adds key and value of each substing
             //To hash
             foreach (string word in para)
             {
                 hash.Add(key, word);
+                hash1.Add(key, word);
                 key++;
             }
-            //Calls Frequency of word method to print word count
-            function.FrequencyOfWord(hash);
+            //Removes specific word 
+            function.Remove(hash, "paranoid");
         }
     }
 }
